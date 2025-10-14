@@ -308,6 +308,7 @@ while (Balance >= 20 || Inventory.Count > 0)
         {
             Console.WriteLine($"{i}. {Inventory[i]} worth {Inventory_Value[i]}$");
         }
+        Console.WriteLine("");
         Console.WriteLine("Which item do you wish to sell?");
         Console.WriteLine("If you do not wish to sell any item, type exit");
         if (int.TryParse(Console.ReadLine(), out int InventorySlot))
