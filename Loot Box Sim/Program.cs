@@ -5,11 +5,11 @@ int Balance = 100;
 int LootRandomizer = 1;
 int BaseRarityChance = 1;
 int LoopCount = 0;
-string RolledLoot = "";
 int RolledValue = 1;
+int RolledMultiplier = 1;
+string RolledLoot = "";
 string RolledItemRarityAndName = "";
 string Rolledrarity = "";
-int RolledMultiplier = 1;
 string Choice = "";
 string FirstChoice = "";
 
