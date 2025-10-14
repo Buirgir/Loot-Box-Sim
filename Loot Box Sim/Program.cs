@@ -105,7 +105,10 @@ string[] Rarities = { Common.Name, Rare.Name, Epic.Name, Mythic.Name };
 
 
 Console.WriteLine("Welcome to OVERWATCH GAMBLING SIM 2025");
-Console.WriteLine("In this game you start with 100 dollars and play to win it big");
+if (Balance == 100)
+{
+    Console.WriteLine("In this game you start with 100 dollars and play to win it big");
+}
 Thread.Sleep(100);
 
 while (Balance >= 20 || Inventory.Count > 0)
@@ -278,6 +281,11 @@ while (Balance >= 20 || Inventory.Count > 0)
             2. Keep it
             ");
             Choice = Console.ReadLine();
+            while (Choice != "1" && Choice != "2")
+            {
+                Console.WriteLine("Invalid Choice, Try again");
+                Choice = Console.ReadLine();
+            }
             if (Choice == "1")
             {
                 Balance += RolledValue;
