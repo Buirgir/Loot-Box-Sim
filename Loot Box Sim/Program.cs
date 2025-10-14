@@ -16,6 +16,7 @@ string FirstChoice = "";
 List<string> Inventory = new List<string>();
 List<int> BalanceList = new List<int>();
 List<int> Inventory_Value = new List<int>();
+List<string> Empty = new List<string>();
 
 //Save Creating
 if (!File.Exists(@"SavedItems.txt"))
@@ -324,8 +325,11 @@ while (Balance >= 20 || Inventory.Count > 0)
     
     
 }
-
-
-
-
-Console.ReadLine();
+Console.WriteLine("You are out of items and monney");
+Console.WriteLine("Type RESET to reset account or Exit to leave");
+Choice = Console.ReadLine();
+if (Choice == "RESET")
+{
+    File.WriteAllLines("@SavedItems.txt", Empty);
+    File.WriteAllLines("SavedValues.txt", Empty);
+}
