@@ -19,23 +19,7 @@ List<int> Inventory_Value = new List<int>();
 List<string> Empty = new List<string>();
 
 //Save Creating
-if (!File.Exists(@"SavedItems.txt"))
-{
-    var a = File.Create(@"SavedItems.txt");
-    a.Close();
-}
-if (!File.Exists(@"SavedValues.txt"))
-{
-    var a = File.Create(@"SavedValues.txt");
-    a.Close();
-}
-if (!File.Exists(@"SavedBalance.txt"))
-{
-    var a = File.Create(@"SavedBalance.txt");
-    a.Close();
-    File.WriteAllText(@"SavedBalance.txt", "100");
-    a.Close();
-}
+SaveCreator();
 
 //Save Loading
 Inventory = File.ReadAllLines(@"SavedItems.txt").ToList();
@@ -339,6 +323,28 @@ Console.WriteLine("Type RESET to reset account or Exit to leave");
 Choice = Console.ReadLine();
 if (Choice == "RESET")
 {
-    File.WriteAllLines("@SavedItems.txt", Empty);
-    File.WriteAllLines("SavedValues.txt", Empty);
+    File.WriteAllLines(@"SavedItems.txt", Empty);
+    File.WriteAllLines(@"SavedValues.txt", Empty);
+    File.WriteAllLines(@"SavedBalance.txt", Empty);
+}
+
+static void SaveCreator()
+{
+    if (!File.Exists(@"SavedItems.txt"))
+    {
+        var a = File.Create(@"SavedItems.txt");
+        a.Close();
+    }
+    if (!File.Exists(@"SavedValues.txt"))
+    {
+        var a = File.Create(@"SavedValues.txt");
+        a.Close();
+    }
+    if (!File.Exists(@"SavedBalance.txt"))
+    {
+    var a = File.Create(@"SavedBalance.txt");
+    a.Close();
+    File.WriteAllText(@"SavedBalance.txt", "100");
+    a.Close();
+    }
 }
